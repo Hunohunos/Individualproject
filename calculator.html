@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function add() {
+                let x = parseFloat(document.getElementById("num1").value);
+                let y = parseFloat(document.getElementById("num2").value);
+                document.getElementById("result").value = x + y;
+            }
+            function subtract() {
+                let x = parseFloat(document.getElementById("num1").value);
+                let y = parseFloat(document.getElementById("num2").value);
+                document.getElementById("result").value = x - y;
+            }
+            function multiply() {
+                let x = parseFloat(document.getElementById("num1").value);
+                let y = parseFloat(document.getElementById("num2").value);
+                document.getElementById("result").value = x * y;
+            }
+            function divide() {
+                let x = parseFloat(document.getElementById("num1").value);
+                let y = parseFloat(document.getElementById("num2").value);
+                document.getElementById("result").value = x / y;
+            }
+            function clearFields() {
+                document.getElementById("num1").value = "";
+                document.getElementById("num2").value = "";
+                document.getElementById("result").value = "";
+            }
+        </script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            position: relative;
+        }
+
+        /* Blurred full-screen background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://i.pinimg.com/originals/56/3a/b1/563ab15230f5bf4259f11125fd1f9c0e.gif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            filter: blur(4px);
+            z-index: -2;
+        }
+
+        .header, .footer {
+            background-color: rgba(94, 3, 252, 0.65); /* 75% transparent */
+            color: aliceblue;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .main-area {
+            display: flex;
+            flex-direction: row;
+            padding: 20px;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .menu {
+            width: 25%;
+            padding: 20px;
+        }
+
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+        }
+
+        .menu li {
+            margin-bottom: 10px;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 12px;
+            background-color: #33b5e5;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .menu li a:hover {
+            background-color: #0099cc;
+        }
+
+        .content {
+            width: 50%;
+            padding: 20px;
+        }
+
+        .image-box {
+            width: 25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .image-box img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: contain;
+        }
+
+        h1 {
+            font-size: 28px;
+        }
+
+        .text-box {
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .text-box p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+        .calculator {
+            background-color: rgba(255, 255, 255, 0.8); /* white box */
+            padding: 30px;
+            border-radius: 10px;
+            margin-left: 30px;
+            font-size: 18px;
+            width: fit-content;
+            min-width: 600px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* optional glow */
+            text-align: center;
+        }
+
+    </style>
+</head>
+    <div class="header">
+        <h1>Simple Calculator</h1>
+    </div>
+    <div class="main-area">
+        <div class="menu">
+        <ul>
+            <li><a href="index.html">About Me</a></li>
+            <li><a href="cv.html">CV</a></li>
+            <li><a href="bmi.html">BMI Calculator</a></li>
+            <li><a href="tax.html">Income Tax Calculator</a></li>
+            <li><a href="converter.html">Unit Converter</a></li>
+        </ul>
+        </div>
+        <div class="calculator">
+        <h2>Calculator</h2>
+        <label>First Number: </label><input type="number" id="num1"><br><br><br>
+        <label>Second Number: </label><input type="number" id="num2"><br><br><br>
+        <label>Result: </label><input type="text" id="result" readonly><br><br><br>
+
+            <button onclick="add()">Add</button>
+            <button onclick="subtract()">Subtract</button>
+            <button onclick="multiply()">Multiply</button>
+            <button onclick="divide()">Divide</button>
+            <button onclick="clearFields()">Clear</button>
+        </div>
+        <div class="image-box">
+            <img src="cretor.jpg" alt="Creator Image">
+        </div>
+    </div>
+</html>
